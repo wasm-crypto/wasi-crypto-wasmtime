@@ -12,6 +12,7 @@ categories = ["wasm", "cryptography"]
 
 include = [
     "src/**/*.rs",
+    "examples/run_demo.rs",
     "witx/wasi_ephemeral_crypto.witx",
     "witx/proposal_common.witx",
     "witx/proposal_asymmetric_common.witx",

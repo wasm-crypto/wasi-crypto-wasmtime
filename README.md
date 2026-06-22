@@ -7,22 +7,6 @@ A WebAssembly program imports `wasi_ephemeral_crypto_*` functions, the host
 resolves them to a real cryptography implementation, and the guest never has to
 ship a crypto library of its own.
 
-There are three moving parts:
-
-- **The crypto implementation.** The [`wasi-crypto`](https://crates.io/crates/wasi-crypto)
-  crate (developed in the `wasi-crypto-host-functions` repository) does all the
-  actual work. It exposes a
-  `CryptoCtx` whose methods speak in Rust terms: `u32` handles, `&[u8]` slices,
-  `&str`, and `Result<_, CryptoError>`. It knows nothing about WebAssembly.
-
-- **The ABI.** The witx files under `witx/` describe the wasm-facing interface:
-  guest pointers, lengths, and a `crypto_errno` integer for every call.
-
-- **This crate.** It runs the witx through [Wiggle], which generates one host
-  trait per witx module plus a matching `add_to_linker`. `src/lib.rs` implements
-  those traits by reading arguments out of guest memory, calling the matching
-  `CryptoCtx` method, and writing the results back. That's the whole bridge.
-
 ## Running the demo
 
 ```sh
