@@ -9,7 +9,18 @@ documentation = "https://docs.rs/wasmtime-wasi-crypto"
 readme = "README.md"
 keywords = ["webassembly", "wasm", "wasi", "crypto", "wasmtime"]
 categories = ["wasm", "cryptography"]
-include = ["src/**/*.rs", "witx/**/*.witx", "examples/run_demo.rs", "README.md", "LICENSE"]
+
+include = [
+    "src/**/*.rs",
+    "witx/wasi_ephemeral_crypto.witx",
+    "witx/proposal_common.witx",
+    "witx/proposal_asymmetric_common.witx",
+    "witx/proposal_signatures.witx",
+    "witx/proposal_symmetric.witx",
+    "witx/proposal_kx.witx",
+    "README.md",
+    "LICENSE",
+]
 
 [dependencies]
 wasi-crypto = "0.1.15"
