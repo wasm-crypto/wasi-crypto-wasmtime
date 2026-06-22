@@ -1,4 +1,4 @@
-# wasmtime-wasi-crypto
+# wasi-crypto-wasmtime
 
 Glue that lets Wasmtime hand a guest the [wasi-crypto] functions the same way it
 hands out the regular preview1 WASI calls.
@@ -56,23 +56,23 @@ time.
 ## Using it in your own embedder
 
 Add the crate alongside the Wasmtime release it targets. The version tracks
-Wasmtime's, so `wasmtime-wasi-crypto` 45.x is built against Wasmtime 45.x:
+Wasmtime's, so `wasi-crypto-wasmtime` 45.x is built against Wasmtime 45.x:
 
 ```toml
 [dependencies]
 wasmtime = "45"
-wasmtime-wasi-crypto = "45"
+wasi-crypto-wasmtime = "45"
 ```
 
 Then wire it into your linker the same way you wire in WASI:
 
 ```rust
 use wasmtime::Linker;
-use wasmtime_wasi_crypto::WasiCryptoCtx;
+use wasi_crypto_wasmtime::WasiCryptoCtx;
 
 // `Host` is whatever you store in your `Store`; it just has to be able to
 // produce a `&mut WasiCryptoCtx`.
-wasmtime_wasi_crypto::add_to_linker(&mut linker, |host: &mut Host| &mut host.crypto)?;
+wasi_crypto_wasmtime::add_to_linker(&mut linker, |host: &mut Host| &mut host.crypto)?;
 ```
 
 `add_to_linker` registers all five witx modules (common, asymmetric-common,

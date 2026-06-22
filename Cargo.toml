@@ -1,11 +1,11 @@
 [package]
-name = "wasmtime-wasi-crypto"
+name = "wasi-crypto-wasmtime"
 version = "45.0.0"
 edition = "2021"
 description = "Glue exposing the wasi-crypto host functions to Wasmtime, like regular WASI"
 license = "Apache-2.0 WITH LLVM-exception"
 repository = "https://github.com/wasm-crypto/wasi-crypto-host-functions"
-documentation = "https://docs.rs/wasmtime-wasi-crypto"
+documentation = "https://docs.rs/wasi-crypto-wasmtime"
 readme = "README.md"
 keywords = ["webassembly", "wasm", "wasi", "crypto", "wasmtime"]
 categories = ["wasm", "cryptography"]
