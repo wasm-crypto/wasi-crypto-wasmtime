@@ -1,0 +1,14 @@
+[package]
+name = "wasi-crypto-demo-guest"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+name = "demo"
+path = "src/main.rs"
+
+[dependencies]
+wasi-crypto-guest = "0.1.5"
+
+[workspace]
