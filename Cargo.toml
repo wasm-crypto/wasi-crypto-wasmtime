@@ -1,6 +1,6 @@
 [package]
 name = "wasi-crypto-wasmtime"
-version = "45.0.0"
+version = "46.0.0"
 edition = "2021"
 description = "Glue exposing the wasi-crypto host functions to Wasmtime, like regular WASI"
 license = "Apache-2.0 WITH LLVM-exception"
@@ -25,15 +25,15 @@ include = [
 
 [dependencies]
 wasi-crypto = "0.1.15"
-wiggle = { version = "45", features = ["wasmtime"] }
+wiggle = { version = "46", features = ["wasmtime"] }
 # The Wiggle-generated linker glue references `StoreContextMut::hostcall_fuel`,
 # which only exists when Wasmtime is built with `component-model`. We don't run
 # components, but the feature has to be on for the glue to compile.
-wasmtime = { version = "45", default-features = false, features = ["cranelift", "runtime", "component-model"] }
+wasmtime = { version = "46", default-features = false, features = ["cranelift", "runtime", "component-model"] }
 thiserror = "2"
 
 [dev-dependencies]
-wasmtime-wasi = { version = "45", features = ["p1"] }
+wasmtime-wasi = { version = "46", features = ["p1"] }
 
 [[example]]
 name = "run_demo"
