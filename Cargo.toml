@@ -1,6 +1,6 @@
 [package]
 name = "wasi-crypto-wasmtime"
-version = "47.0.0"
+version = "47.0.3"
 edition = "2021"
 description = "Glue exposing the wasi-crypto host functions to Wasmtime, like regular WASI"
 license = "Apache-2.0 WITH LLVM-exception"
