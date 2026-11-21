@@ -40,12 +40,12 @@ time.
 ## Using it in your own embedder
 
 Add the crate alongside the Wasmtime release it targets. The version tracks
-Wasmtime's, so `wasi-crypto-wasmtime` 50.x is built against Wasmtime 50.x:
+Wasmtime's, so `wasi-crypto-wasmtime` 51.x is built against Wasmtime 51.x:
 
 ```toml
 [dependencies]
-wasmtime = "50"
-wasi-crypto-wasmtime = "50"
+wasmtime = "51"
+wasi-crypto-wasmtime = "51"
 ```
 
 Then wire it into your linker the same way you wire in WASI:
